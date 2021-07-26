@@ -1,0 +1,80 @@
+ALGORITHM DotProject
+VAR
+       vector : STRUCT
+                x : INTEGER;
+                y : INTEGER;
+            END_STRUCT
+      vectors : ARRAY_OF vectors[10];
+      i,j : INTEGER;
+BEGIN
+ 
+   PROCEDURE dot_product (vector1 , vector2)
+   VAR
+      ps:=0;
+   BEGIN
+      FOR i FROM 0 TO vectors.length - 1   DO
+        ps := ps + (vector1[i] * vector2[i])
+      END_FOR
+      write("The DOT product of vector one  and vector two  is ", ps);
+
+   END
+        //Call PROC dot_product
+      FOR i FROM 0 TO vectors.length DO
+      FOR  j FROM i + 1 TO j<vectors.length DO
+          dot_product(vectors[i], vectors[j]);
+      END FOR
+      END FOR 
+
+
+      FUNCTION dotProduct(vector1,vector2) : INTEGER
+       VAR
+      ps:=0;
+   BEGIN
+      FOR i FROM 0 TO vectors.length - 1   DO
+        ps := ps + (vector1[i] * vector2[i]);
+      END_FOR
+      write("The DOT product of vector one  and vector two  is ", ps);
+    END
+
+
+        //Call Func dot_product
+        FOR i FROM 0 TO vectors.length -1 DO
+           FOR  j FROM i + 1 TO j< vectors.length DO
+               IF (dotProduct(vectors[i], vectors[j]) === 0) THEN 
+                    write(vectors[i] , " and ", vectors[j] , "  are orthogonal  " );
+               END IF
+            END FOR
+          END FOR 
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*let vectors = [[7, 1, 1],[6, 0, 2], [5, 7, 0], [3, 1, 2], [2, 3 ,8], [0, 0, 0]]
+
+function dotProduct(vector1, vector2){
+    let result = 0;
+    for(let i = 0; i < vector1.length; i++){
+        result += vector1[i] * vector2[i]
+      }
+    return result
+  }
+
+  for(let i = 0; i < vectors.length; i++){
+    for(let j = i + 1; j < vectors.length; j++){
+      if(dotProduct(vectors[i], vectors[j]) === 0){
+          console.log(${vectors[i]} and ${vectors[j]} are orthogonal )
+      }
+    }
+  }
