@@ -33,7 +33,7 @@ BEGIN
       FOR i FROM 0 TO vectors.length - 1   DO
         ps := ps + (vector1[i] * vector2[i]);
       END_FOR
-      write("The DOT product of vector one  and vector two  is ", ps);
+      RETURN ps;
     END
 
 
